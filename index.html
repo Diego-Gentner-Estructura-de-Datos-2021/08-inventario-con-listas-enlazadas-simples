@@ -1,18 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./src/img/icon.png">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>3H - Diego - Inventario con listas enlazadas simples</title>
+    <link rel="stylesheet" href="src/css/bootstrap.css">
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="icon" type="image/png" href="img/icon.png">
 </head>
 <body>
-    <h1>
-        Inventario con listas enlazadas simples
-    </h1>
-    <h2>Por Diego Alejandro Gentner Polanco</h2>
-    
-    <script src="./src/js/main.js" type="module"></script>
+    <h2 class="text-center my-5 titulo">Inventario con listas enlazadas simples</h2>
+    <div class="container mt-5 p-5">
+        <center><legend class="mb-5">Creado por Diego Gentner - 3H - Estructura de Datos</legend></center>
+        <div id="contenido full border" class="row">
+            <div class="col-md-6 agregar-cita">
+                    <legend class="mb-4">Agregar / Insertar del producto</legend>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-lg-4 col-form-label">Id del Producto:</label>
+                        <div class="col-sm-8 col-lg-8">
+                            <input type="number" minlength="1" min="1" max="9999999999" maxlength="10" id="id" name="mascota" class="form-control" placeholder="Id numérico o código">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-lg-4 col-form-label">Nombre:</label>
+                        <div class="col-sm-8 col-lg-8">
+                            <input type="text" minlength="1" id="name" name="propietario" class="form-control"  placeholder="Nombre del Producto">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-lg-4 col-form-label">Cantidad:</label>
+                        <div class="col-sm-8 col-lg-8">
+                            <input type="number" minlength="1" min="1" max="9999999999" maxlength="10" id="quantity" name="mascota" class="form-control" placeholder="Cantidad en KG">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-lg-4 col-form-label">Precio:</label>
+                        <div class="col-sm-8 col-lg-8">
+                            <input type="number" minlength="1" min="1" max="9999999999" maxlength="10" id="price" name="mascota" class="form-control" placeholder="Precio en MXN">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                            <button id="btnAdd" type="submit" class="btn btn-success w-100 d-block">Agregar / Insertar Producto</button>
+                    </div>
+
+                    <!-- Busqueda de Producto -->
+
+                    <legend class="mb-4">Buscar Producto</legend>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-lg-4 col-form-label">Id del Producto:</label>
+                        <div class="col-sm-8 col-lg-8">
+                            <input type="number" minlength="1" min="1" max="9999999999" maxlength="10" id="idSearch" name="mascota" class="form-control" placeholder="Id numérico o código">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button id="btnSearch" type="submit" class="btn btn-success w-100 d-block">Buscar</button>
+                    </div>
+
+                    <!-- Eliminar Producto -->
+
+                    <legend class="mb-4">Eliminar Producto</legend>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-lg-4 col-form-label">Id del Producto:</label>
+                        <div class="col-sm-8 col-lg-8">
+                            <input type="number" minlength="1" min="1" max="9999999999" maxlength="10" id="idDelete" name="mascota" class="form-control" placeholder="Id numérico o código">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button id="btnDelete" type="submit" class="btn w-100 d-block butty">Eliminar</button>
+                    </div>
+
+
+            </div>
+            <div class="col-md-6">
+                <h2 id="administra" class="mb-4">Visualiza tus Productos</h2>
+                <div class="form-group">
+                    <button id="btnInvert" type="submit" class="btn btn-success w-100 d-block">Invertir Orden</button>
+                </div>
+
+                <div id="productosAlmacenados">
+                    
+                    
+
+                </div>
+                
+
+                <br><br>
+                <div>
+                    <h2 class="mb-4">Historial de Busqueda</h2>
+                    <button id="btnDeleteHistory" type="submit" class="btn w-100 d-block butty mb-4">Eliminar Historial</button>
+                    
+                    <div id="historialBusqueda">
+                    
+                    
+
+                    </div>
+              
+                  </div>
+            </div>
+        </div> <!--.row-->
+    </div><!--.container-->
+
+    <script type="module" src="src/js/main.js"></script>
+
 </body>
 </html>
