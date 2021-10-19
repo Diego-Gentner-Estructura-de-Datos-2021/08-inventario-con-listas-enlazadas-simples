@@ -2,7 +2,7 @@ export default class List {
    
     constructor() {
         this._products = 'Deprecated legacy function';
-        this.inicio=null;
+        this.inicio = null;
     }
   
     addProduct(product) {
@@ -75,6 +75,14 @@ export default class List {
 
 
     agregar(nuevo){
+
+        let validate = this.buscar(nuevo.getId());
+        console.log(validate);
+
+        if (validate != null) {
+            return null;
+        }
+
         if (this.inicio==null)
           this.inicio=nuevo;
         else             

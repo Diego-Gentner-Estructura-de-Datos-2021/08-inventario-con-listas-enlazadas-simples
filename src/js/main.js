@@ -51,7 +51,7 @@ class App {
 
         if (!product) {
             Swal.fire('ESPERA', 'Hay campos vacios o con datos no correctos.', 'warning');
-            console.log(this._list.getProducts());
+            console.log('Campos Vacios');
             return;
         }
 
@@ -70,7 +70,7 @@ class App {
             return;
         }
 
-        this._htmlDocument.deleteProductList();
+        // this._htmlDocument.deleteProductList();
 
         max++;
         console.log(`Productos Registrados: ${max}`);
