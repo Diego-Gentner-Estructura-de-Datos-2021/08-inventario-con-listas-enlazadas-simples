@@ -5,6 +5,7 @@ export default class Product {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
+        this.siguiente = null;
     }
 
     getId() {
@@ -26,4 +27,5 @@ export default class Product {
     getTotal() {
         return this.getPrice() * this.getQuantity();
     }
+
 }

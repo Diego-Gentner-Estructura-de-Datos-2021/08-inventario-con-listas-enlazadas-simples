@@ -81,7 +81,7 @@ class App {
         inputName.value = ''        
         inputQuantity.value = ''
         inputPrice.value = ''
-        // this._htmlDocument.updateHtmlProducts(this._list.getProducts());
+        this._htmlDocument.updateHtmlProducts(this._list.getProducts());
         return;
 
     }
@@ -107,6 +107,7 @@ class App {
             }
         }
 
+        console.log(this._list.listar());
     }
 
     deleteForm = () => {

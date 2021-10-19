@@ -107,20 +107,7 @@ export default class List {
         }
         return texto;
       }
-    
-    listar(){
-    if (!this.inicio)
-        return '';
-    else
-        return this._listarRec(this.inicio);
-    }
-
-    _listarRec(n){
-    if (n.siguiente==null)
-        return n.info();
-    else
-        return n.info() + '\n' + this._listarRec(n.siguiente);
-    }                
+                    
                     
     buscar(id){
     let temp=this.inicio;
@@ -157,7 +144,6 @@ export default class List {
         }
         return elim;
     }
-
 
 
 }

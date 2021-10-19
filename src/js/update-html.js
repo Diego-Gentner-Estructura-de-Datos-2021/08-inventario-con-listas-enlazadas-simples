@@ -30,12 +30,22 @@ export default class UpdateHTML {
         container_block.prepend(block_to_insert);
     }
 
-    updateHtmlProducts(products) {
+    updateHtmlProducts(element) {
+        
+        console.log('Hola')
+        console.log(element);
+        console.log(element.siguiente);
+
+        if (element = null) {
+            return;
+        }
+        
         let block_to_insert;
         let container_block;
          
-        products.forEach(element => {
-            if (element != undefined) {
+
+            if (element != null) {
+                console.log('me ejecute')
                 block_to_insert = document.createElement( 'div' );
                 block_to_insert.classList.add("productsIndex");
                 block_to_insert.classList.add("mb-2");
@@ -48,7 +58,11 @@ export default class UpdateHTML {
                     container_block.prepend(block_to_insert);
                 }
             }
-        });
+
+        if (element.siguiente != null) {
+            this.updateHtmlProducts(element.siguiente);
+        }
+
     }
 
     deleteProductList = () => {
@@ -80,6 +94,24 @@ export default class UpdateHTML {
 
 
     // Extra Functions
+
+    listar(inicio){
+    if (!this.inicio)
+        return;
+    else
+        return this._listarRec(this.inicio);
+    }
+
+    _listarRec(n){
+    if (n.siguiente==null)
+        return this.info(n);
+    else
+        return this.info(n) + '\n' + this._listarRec(n.siguiente);
+    }
+
+    info(element) {
+        return `ID: ${element.getId()}, ${element.getName()}, Peso: ${element.getQuantity()} kg, Precio: $${element.getPrice()}/kg Total: $${element.getTotal()}`;
+    }
 
     setLever(boolean) {
         this._lever = boolean;
