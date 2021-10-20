@@ -96,17 +96,6 @@ export default class List {
           this._agregar(nuevo,nodo.siguiente);
     }
 
-    listar2(){
-        let texto='';
-        if (!this.inicio)
-          return '';
-        let temp=this.inicio;
-        while(temp!=null){
-          texto += temp.info() + '\n';
-          temp=temp.siguiente;
-        }
-        return texto;
-      }
                     
                     
     buscar(id){
@@ -131,7 +120,7 @@ export default class List {
     
         let temp=this.inicio;
     
-        while(temp.siguiente != null ){
+        while(temp.siguiente != null){
     
           if (temp.siguiente.id==id)
           {
